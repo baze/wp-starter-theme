@@ -6,10 +6,11 @@ var bundleLogger = require('../util/bundleLogger');
 var gulp = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
-var uglify = require('gulp-uglify');
-var streamify = require('gulp-streamify');
 var gulpif = require('gulp-if');
-var ngAnnotate = require('gulp-ng-annotate');
+var streamify = require('gulp-streamify');
+//var ngAnnotate = require('gulp-ng-annotate');
+var ngMin = require('gulp-ngmin');
+var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
 
 var env = process.env.NODE_ENV || 'development';
@@ -36,7 +37,8 @@ gulp.task('browserify', ['ng-autobootstrap'], function () {
             .bundle()
             .on('error', handleErrors)
             .pipe(source(outputDir + '/js/bundle.js'))
-            .pipe(gulpif(env === 'production', streamify(ngAnnotate())))
+            //.pipe(gulpif(env === 'production', streamify(ngAnnotate())))
+            .pipe(gulpif(env === 'production', streamify(ngMin())))
             .pipe(gulpif(env === 'production', streamify(uglify({mangle: false}))))
             .pipe(gulp.dest('./'))
             .on('end', bundleLogger.end)
