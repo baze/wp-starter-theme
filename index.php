@@ -16,9 +16,14 @@
 	if (!class_exists('Timber')){
 		echo 'Timber not activated';
 	}
+
+
+    $args = array(
+    'posts_per_page'   => -1,
+    'post_type'        => 'mitarbeiter');
 	
 	$data = Timber::get_context();
-	$posts = Timber::get_posts('TimberPost');
+	$posts = Timber::get_posts($args, 'TimberPost');
 	$data['posts'] = $posts;
 	Timber::render('index.twig', $data);
 
