@@ -1,0 +1,30 @@
+._global-header{
+	@extend .container;
+	@extend %clear;
+	@extend %reset;
+	@extend %z-layer-ui;
+	@extend %box-shadow;
+	
+	background-color: $white;	
+	padding: 1em 0;
+}
+
+._global-header-logo{
+	@extend .three;
+	@extend .columns;
+
+	float: none !important;
+	@include breakpoint($breakpoint-medium) {
+			float: left !important;
+		}
+
+	img{ 
+		display: block; 
+		margin: 0 auto 1.75em auto;
+		
+		@include breakpoint($breakpoint-medium) {
+			margin: 0;
+		}
+
+	}
+}

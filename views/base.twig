@@ -3,7 +3,7 @@
 {% endblock %}  
 </head>
     <body class="{{body_class}}" data-source="base.twig">
-        <header class="header" >
+        <header class="_global-header" role="banner" id="top">
             {% block header %}
             <div class="wrapper">
 
@@ -13,12 +13,6 @@
 
                 <nav id="access" class="ink-navigation nav-collapse" role="navigation">
                     {{wp_nav_menu}}
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
                 </nav><!-- #access -->
                 
             </div>

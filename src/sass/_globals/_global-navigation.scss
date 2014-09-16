@@ -1,0 +1,26 @@
+nav{
+	ul{ 
+		@extend %reset;
+		list-style: none;
+		font-family: $primary-font; 
+	}
+
+	li{ @extend %transition; @extend %reset; }
+}
+
+._global-header-navigation{
+	
+	@extend .thirteen;
+	@extend .columns;
+	@extend %dropdown;
+	
+	width: 100%;
+	font-size: 75%;
+	@include breakpoint($breakpoint-medium) {
+		height: 60px;
+	}
+
+	.has-submenu > a{ line-height: 60px; }
+}
+
+._global-footer-navigation{}

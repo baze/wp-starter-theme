@@ -1,0 +1,103 @@
+%dropdown{
+
+	.menu{ @extend %transition;}
+
+	@extend %z-layer-ui;
+	font-weight: 200;
+
+
+	ul{
+		
+		@include breakpoint($breakpoint-medium) {
+			display: table;
+    		table-layout: fixed;
+    		width: 100%;
+    	}
+	
+	li{		
+		
+		text-align: center;
+
+		@include breakpoint($breakpoint-medium) {
+			display: table-cell;
+		}
+
+
+		&:hover{ 
+
+			@extend %box-shadow;
+
+			@include breakpoint($breakpoint-medium) {
+				.sub-menu{ display: block; } 
+			}
+		}
+		
+
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 0 1em;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+
+	.has-submenu{
+		position: relative;
+		a{}
+	}
+
+	.sub-menu{
+		display: none;
+		position: absolute;
+		width: 150%;
+		font-size: 85%;
+		background-color: $white;
+		border-top: 1px solid #eee;
+		@extend %box-shadow;
+
+		li{ 
+			display: block;
+			float: none;
+			text-align: left;
+			&:hover{ 
+				background-color: $grey-200; 
+				box-shadow: none;
+				border-left: 4px solid $teal-a700;
+			}
+
+			a{ padding: 0.75em 1.5em; } 
+		}
+	}
+
+	.current-menu-item{
+
+		
+		@include breakpoint($breakpoint-medium) { 
+		}
+		
+		&:hover{
+			@include breakpoint($breakpoint-medium) { 
+			}
+
+
+			.sub-menu{
+				left: -1px;
+			}
+
+			li{ 
+				&:hover{}
+			}
+
+		}
+	}
+
+	.sub-menu .current-menu-item{ 
+		border: none; 
+		&:hover{}
+	}
+
+	}
+
+}

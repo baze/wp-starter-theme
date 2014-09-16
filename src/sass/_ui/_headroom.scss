@@ -1,0 +1,35 @@
+@include breakpoint($breakpoint-medium) {
+	
+	$header-height: 156px;
+
+	._global-main{
+		margin-top: $header-height;
+	}
+
+	.headroom{
+		position: absolute;
+		background-color: $white;
+		transition: transform 200ms linear;
+	}
+
+	.headroom--top{
+		position: relative;
+	}
+
+	.headroom--not-top{
+		border-top: 0.5em solid $primary-color;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 !important;
+	}
+
+	.headroom--pinned{
+		transform: translateY(0%);
+	}
+
+	.headroom--unpinned{
+		transform: translateY(-100%);
+	}
+}

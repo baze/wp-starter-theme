@@ -1,0 +1,34 @@
+.content{ margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ddd; }
+
+._content-beitraege{}
+
+.post{
+	@extend %clear;
+	padding: 0.5em;
+	border-bottom:  1px solid #ddd;
+}
+
+.post-symbol span{ font-family: "icomoon"; }
+
+.post-symbol, .post-content, .post-image{ float: left; }
+
+.post-content{ max-width: 85%; }
+
+.post-image{ padding-right: 1em; }
+
+.post-symbol{ padding-right: 1em; }
+
+.post-title{ margin-bottom: 0.5em; }
+
+.post-excerpt, .post-author{
+	font-size: 85%;
+}
+
+.post-author{
+	font-style: italic;
+}
+
+._content-publikationen{
+	.post-image{ width: 30%; }
+	.post-content{ width: 70%; }
+}

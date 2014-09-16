@@ -1,0 +1,17 @@
+._content-leistungen{
+	article{
+		@extend %transition;
+		
+		border-bottom: 1px solid #ddd;
+		padding: 0.75em 0;
+		margin-bottom: 0.5em;
+
+		&:hover{ padding-left: 0.5em; }
+	}
+
+	a{ text-decoration: none; }
+	h3{ color: #333; }
+	div{ font-size: 75%; }
+	span:nth-child(n+2):before{content:", ";}
+	div a:hover{ text-decoration: underline; }
+}

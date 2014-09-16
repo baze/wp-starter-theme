@@ -1,0 +1,23 @@
+html, body{
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body{
+	background-color: #ddd;
+	background-image: url(../img/white_carbonfiber.png);
+	
+	@include breakpoint($breakpoint-medium) {
+		background-image: url(../img/white_carbonfiber_@2X.png);
+	}
+}
+
+
+//wp-admin-bar
+.admin-bar{
+
+	._global-header{
+		top:46px;
+		@include breakpoint(783px) { top:32px; }
+	}
+}

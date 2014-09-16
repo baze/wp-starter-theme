@@ -1,0 +1,15 @@
+._content-rechner{
+
+iframe{
+	border: none;
+	width: 100%;
+	@include breakpoint($breakpoint-small) { min-height: 360px; }
+	@include breakpoint($breakpoint-small-medium) { min-height: 460px; }
+	@include breakpoint($breakpoint-medium) { min-height: 560px; }	
+	@include breakpoint($breakpoint-wide) { min-height: 660px; }
+	@include breakpoint($breakpoint-huge) { min-height: 760px; }
+}
+
+.basesegment{ width: 100% !important; }
+
+}

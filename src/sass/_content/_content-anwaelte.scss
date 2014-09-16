@@ -1,0 +1,20 @@
+._content-anwaelte{
+
+	h2{ margin-bottom: 0.5em; }
+
+	a{ text-decoration: none; }
+	
+	article{
+		@extend %transition;
+		padding: 1em;
+		border: 1px solid $grey-200;
+		margin-bottom: 1em !important;
+
+		&:hover{ background-color: $grey-50; }
+		}
+
+	ul{ 
+		font-size: 75%;
+	}
+
+}

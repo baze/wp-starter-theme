@@ -1,0 +1,18 @@
+._content-bueros{
+
+	a{ text-decoration: none; }
+
+	h2{ margin-bottom: 0.5em; }
+
+	h3{ text-align: center; }
+
+	article{
+		@extend %transition;
+		background-color: $grey-100;
+
+		&:hover{ background-color: $grey-50; }
+	}
+
+	article img{ display: block; }
+
+}
