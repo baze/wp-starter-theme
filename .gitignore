@@ -1,1 +1,12 @@
+# PHPStorm
 .idea
+
+# sass
+.sass-cache
+
+# node modules
+node_modules
+
+# bower
+bower_components
+
