@@ -91,13 +91,7 @@ class StarterSite extends TimberSite
 
     function load_scripts()
     {
-//        wp_enqueue_script('modernizr', THEME_URL . '/bower_components/modernizr/modernizr.js', array(), '20120206', true);
-//        wp_enqueue_script('respond', THEME_URL . '/bower_components/respond/dest/respond.min.js', array(), '20120206', true);
-//        wp_enqueue_script('svgmagic', THEME_URL . '/bower_components/SVGMagic/src/jquery.svgmagic.js', array('jquery'), '20120206', true);
-//        wp_enqueue_script('responsive-nav', THEME_URL . '/bower_components/responsive-nav/responsive-nav.min.js', array(), '20120206', true);
-//        wp_enqueue_script('headroom', THEME_URL . '/bower_components/headroom.js/dist/headroom.min.js', array(), '20120206', true);
-
-        wp_enqueue_script('main', THEME_URL . '/dest/js/bundle.js', array(), '20120206', true);
+        wp_enqueue_script('main', THEME_URL . '/dest/js/bundle.js', array(), '20140916', true);
 
         if (is_singular() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');

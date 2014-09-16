@@ -29,6 +29,9 @@
       },
       "responsiveNav": {
           "exports": "responsiveNav"
+      },
+      "headroom": {
+          "exports": "Headroom"
       }
   },
   "devDependencies": {
