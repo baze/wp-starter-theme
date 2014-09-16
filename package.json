@@ -4,17 +4,39 @@
   "description": "WP starter Theme with common tasks and scenarios",
   "repository": {},
   "main": "./dest/js/main.js",
-  "browser": {},
+  "browser": {
+    "modernizr": "./bower_components/modernizr/modernizr.js",
+    "respond": "./bower_components/respond/dest/respond.min.js",
+    "svgmagic": "./bower_components/SVGMagic/src/jquery.svgmagic.js",
+    "responsiveNav": "./bower_components/responsive-nav/responsive-nav.min.js",
+    "headroom": "./bower_components/headroom.js/dist/headroom.min.js"
+  },
   "browserify": {
     "transform": [
+      "debowerify",
+      "deamdify",
       "browserify-shim"
     ]
   },
-  "browserify-shim": {},
+  "browserify-shim": {
+      "modernizr": {
+          "exports": "Modernizr"
+      },
+      "svgmagic": {
+          "depends": [
+              "jquery:jQuery"
+          ]
+      },
+      "responsiveNav": {
+          "exports": "responsiveNav"
+      }
+  },
   "devDependencies": {
     "browser-sync": "^1.4.0",
     "browserify": "^5.11.2",
     "browserify-shim": "^3.7.0",
+    "deamdify": "^0.1.1",
+    "debowerify": "^0.8.1",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "^1.0.0",
     "gulp-changed": "^1.0.0",

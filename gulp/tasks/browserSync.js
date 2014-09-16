@@ -11,6 +11,6 @@ gulp.task('browserSync', ['build'], function() {
         //    baseDir: 'public'
         //}
         //host: "mt.dev",
-        proxy: '127.0.0.1:8080/sites/wp-starter/public'
+        proxy: '127.0.0.1:8080'
     });
 });

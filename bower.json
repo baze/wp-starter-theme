@@ -13,6 +13,9 @@
     "modernizr": "~2.8.3",
     "respond": "~1.4.2",
     "breakpoint-sass": "~2.5.0",
-    "normalize-scss": "~3.0.1"
+    "normalize-scss": "~3.0.1",
+    "SVGMagic": "~2.4.3",
+    "responsive-nav": "~1.0.32",
+    "headroom.js": "~0.7.0"
   }
 }

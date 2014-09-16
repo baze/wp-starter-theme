@@ -8,11 +8,17 @@
             <div class="wrapper">
 
                 <h1 class="hdr-logo" role="banner">
-                    <a class="ink-logo-text" href="/" title="Timber" rel="home">Timber</a>
+                    <a class="ink-logo-text" href="{{ site.url }}" title="Timber" rel="home">Timber</a>
                 </h1>
 
-                <nav id="access" class="ink-navigation" role="navigation">
+                <nav id="access" class="ink-navigation nav-collapse" role="navigation">
                     {{wp_nav_menu}}
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
                 </nav><!-- #access -->
                 
             </div>
