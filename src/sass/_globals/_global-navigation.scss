@@ -9,9 +9,7 @@ nav{
 }
 
 ._global-header-navigation{
-	
-	@extend .thirteen;
-	@extend .columns;
+
 	@extend %dropdown;
 	
 	width: 100%;

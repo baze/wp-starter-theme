@@ -3,40 +3,24 @@
 {% endblock %}  
 </head>
     <body class="{{body_class}}" data-source="base.twig">
+    <div class="wrapper">
         <header class="_global-header" role="banner" id="top">
             {% block header %}
-            <div class="wrapper">
-
-                <h1 class="hdr-logo" role="banner">
-                    <a class="ink-logo-text" href="{{ site.url }}" title="Timber" rel="home">Timber</a>
-                </h1>
-
-                <nav id="access" class="ink-navigation nav-collapse" role="navigation">
-                    {{wp_nav_menu}}
-                </nav><!-- #access -->
-                
-            </div>
+                {% include('_globals/_global-header-logo.twig') %}
+                {% include('_globals/_global-header-navigation.twig') %}
             {% endblock %}
         </header>
 
+        <main class="_global-main {{ post.class }}" role="main" id="main">
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
+        </main>
 
-        <section id="content" role="main" class="content-wrapper">
-            {% if title %}<h1>{{title}}</h1>{% endif %}
-            <div class="wrapper {{sidebar_class}}">
-                {% block content %}
-                    Sorry, no content
-                {% endblock %}
-            </div>
-            {% if sidebar %}
-                <aside class="layout-sidebar">
-                    {{sidebar}}
-                </aside>
-            {% endif %}
-        </section>
-
-        <div id="footer">
-            {% include 'footer.twig' %}
-        </div>
-        {{ wp_footer }}
+        <footer class="_global-footer" role="contentinfo">
+            {% include '_globals/_global-footer.twig' %}
+        </footer>
+    </div>
+    {{ wp_footer }}
     </body>
 </html>

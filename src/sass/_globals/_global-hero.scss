@@ -1,8 +1,0 @@
-._global-hero{
-	@extend .container;
-	@extend %box-shadow;
-
-	img{ display: block; max-width: 100%; }
-
-	&:empty{ display: none; margin: 0; }
-}

@@ -1,12 +1,3 @@
 ._global-content{
-	@extend .eleven;
-	@extend .columns;
-	@extend .omega;
 
-	padding:0 1em;
-	
-	@include breakpoint($breakpoint-medium) {
-		border-right: 1px solid #ddd;
-		padding:0 1em 0 0;
-	}
 }

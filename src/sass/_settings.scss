@@ -17,7 +17,6 @@ body{
 .admin-bar{
 
 	._global-header{
-		top:46px;
 		@include breakpoint(783px) { top:32px; }
 	}
 }

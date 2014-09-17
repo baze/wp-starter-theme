@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1">{{post.post_title}}</h1>
+				
+				<div class="article-body">
+					{{post.get_content}}
+				</div>
+			</section>
+
+		</article>
+	</div> <!-- /content-wrapper -->
+
+    <section class="jobs">
+        {% for job in jobs %}
+            {% include('job.twig', job) %}
+        {% endfor %}
+    </section>
+
+    <section class="services">
+        {% for service in services %}
+            {% include('service.twig', service) %}
+        {% endfor %}
+    </section>
+
+{% endblock %}
