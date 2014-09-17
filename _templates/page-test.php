@@ -24,9 +24,9 @@
 
 $context = Timber::get_context();
 $post = new TimberPost();
-$jobs = new TimberPost(['post_type' => 'jobs']);
-$services = new TimberPost(['post_type' => 'services']);
 $context['post'] = $post;
-$context['jobs'] = $jobs;
-$context['services'] = $services;
+
+$mitarbeiter = Timber::get_posts(['post_type' => 'mitarbeiter']);
+$context['mitarbeiter'] = $mitarbeiter;
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

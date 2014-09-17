@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="_content-page">
+        {% include('_modules/_module-entry-header.twig') %}
+        {% include('_modules/_module-entry-content.twig') %}
+        {% include('_modules/_module-entry-footer.twig') %}
+    </div>
+
+    <section class="mitarbeiter">
+        {% for person in mitarbeiter %}
+            {% include('_snippets/_snippet-team-member.twig') %}
+        {% endfor %}
+    </section>
+
+{% endblock %}

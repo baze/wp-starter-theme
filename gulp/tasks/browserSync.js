@@ -6,7 +6,7 @@ var gulp        = require('gulp');
 var outputDir = 'dest';
 
 gulp.task('browserSync', ['build'], function() {
-    browserSync.init([outputDir + "/css/**", outputDir + "/js/**"], {
+    browserSync.init([outputDir + "/css/**", outputDir + "/js/**", "views/**"], {
         //server: {
         //    baseDir: 'public'
         //}
