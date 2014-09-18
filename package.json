@@ -19,23 +19,23 @@
     ]
   },
   "browserify-shim": {
-      "modernizr": {
-          "exports": "Modernizr"
-      },
-      "svgmagic": {
-          "depends": [
-              "jquery:jQuery"
-          ]
-      },
-      "responsiveNav": {
-          "exports": "responsiveNav"
-      },
-      "headroom": {
-          "exports": "Headroom"
-      }
+    "modernizr": {
+      "exports": "Modernizr"
+    },
+    "svgmagic": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "responsiveNav": {
+      "exports": "responsiveNav"
+    },
+    "headroom": {
+      "exports": "Headroom"
+    }
   },
   "devDependencies": {
-    "browser-sync": "^1.4.0",
+    "browser-sync": "^1.3.7",
     "browserify": "^5.11.2",
     "browserify-shim": "^3.7.0",
     "deamdify": "^0.1.1",
@@ -52,6 +52,7 @@
     "gulp-ngmin": "^0.3.0",
     "gulp-notify": "^1.6.0",
     "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.4.0",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.0.1",
     "gulp-util": "^3.0.1",
