@@ -17,6 +17,7 @@
     "SVGMagic": "~2.4.3",
     "responsive-nav": "~1.0.32",
     "headroom.js": "~0.7.0",
-    "susy": "~2.1.3"
+    "susy": "~2.1.3",
+    "jacket": "~1.1.1"
   }
 }
