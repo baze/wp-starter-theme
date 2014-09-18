@@ -10,13 +10,7 @@
 
     <section class="mitarbeiter">
         {% for person in mitarbeiter %}
-            {% include('_snippets/_snippet-tease-'~person.post_type~'.twig') %}
-        {% endfor %}
-    </section>
-
-    <section class="mitarbeiter">
-        {% for person in mitarbeiter %}
-            {% include('_snippets/_snippet-tease-'~person.post_type~'.twig') %}
+            {% include('_snippets/_snippet-person--med.twig') %}
         {% endfor %}
     </section>
 
