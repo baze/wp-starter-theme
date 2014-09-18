@@ -1266,7 +1266,7 @@ a[rel="next"] {
   margin: 0;
   padding: 0;
   width: 100%;
-  display: block;
+  display: table;
   list-style: none;
 }
 
@@ -1378,47 +1378,53 @@ a[rel="next"] {
   .nav-collapse .has-submenu {
     display: table-cell;
   }
+
+  /* line 76, ../../src/sass/_ui/_responsive-nav.scss */
+  .nav-collapse li {
+    width: auto;
+    display: table-cell;
+  }
 }
 /* line 10, ../../src/sass/_ui.scss */
 img {
   max-width: 100%;
 }
 
-/* line 17, ../../src/sass/_grid.scss */
-.container, ._global-footer {
+/* line 18, ../../src/sass/_grid.scss */
+.container {
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 0.75em;
 }
 /* line 12, ../../bower_components/susy/sass/susy/output/support/_clearfix.scss */
-.container:after, ._global-footer:after {
+.container:after {
   content: " ";
   display: block;
   clear: both;
 }
 @media (min-width: 48em) {
-  /* line 17, ../../src/sass/_grid.scss */
-  .container, ._global-footer {
+  /* line 18, ../../src/sass/_grid.scss */
+  .container {
     padding: 0;
   }
 }
 
-/* line 25, ../../src/sass/_grid.scss */
+/* line 26, ../../src/sass/_grid.scss */
 .column {
   width: 100%;
   margin: 0;
   margin-bottom: 0.5em;
 }
 @media (min-width: 48em) {
-  /* line 25, ../../src/sass/_grid.scss */
+  /* line 26, ../../src/sass/_grid.scss */
   .column {
     margin-bottom: 0;
   }
 }
 
 @media (min-width: 48em) {
-  /* line 33, ../../src/sass/_grid.scss */
+  /* line 34, ../../src/sass/_grid.scss */
   .one-third {
     width: 31.66667%;
     float: left;
@@ -1428,7 +1434,7 @@ img {
 }
 
 @media (min-width: 48em) {
-  /* line 34, ../../src/sass/_grid.scss */
+  /* line 35, ../../src/sass/_grid.scss */
   .one-quarter {
     width: 23.33333%;
     float: left;
@@ -1438,7 +1444,7 @@ img {
 }
 
 @media (min-width: 48em) {
-  /* line 35, ../../src/sass/_grid.scss */
+  /* line 36, ../../src/sass/_grid.scss */
   .one-half {
     width: 48.33333%;
     float: left;
@@ -1448,7 +1454,7 @@ img {
 }
 
 @media (min-width: 48em) {
-  /* line 36, ../../src/sass/_grid.scss */
+  /* line 37, ../../src/sass/_grid.scss */
   .two-thirds {
     width: 65%;
     float: left;
@@ -1463,20 +1469,8 @@ html, body {
   overflow-x: hidden;
 }
 
-/* line 6, ../../src/sass/_settings.scss */
-body {
-  background-color: #ddd;
-  background-image: url(../img/white_carbonfiber.png);
-}
-@media (min-width: 48em) {
-  /* line 6, ../../src/sass/_settings.scss */
-  body {
-    background-image: url(../img/white_carbonfiber_@2X.png);
-  }
-}
-
 @media (min-width: 783px) {
-  /* line 19, ../../src/sass/_settings.scss */
+  /* line 17, ../../src/sass/_settings.scss */
   .admin-bar ._global-header {
     top: 32px;
   }
@@ -1661,24 +1655,24 @@ embed, iframe, object {
   }
 }
 
-/* line 2, ../../src/sass/_globals/_global-navigation.scss */
+/* line 3, ../../src/sass/_globals/_global-navigation.scss */
 nav ul {
   list-style: none;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 11, ../../src/sass/_globals/_global-navigation.scss */
+/* line 12, ../../src/sass/_globals/_global-navigation.scss */
 ._global-header-navigation {
   width: 100%;
   font-size: 75%;
 }
 @media (min-width: 48em) {
-  /* line 11, ../../src/sass/_globals/_global-navigation.scss */
+  /* line 12, ../../src/sass/_globals/_global-navigation.scss */
   ._global-header-navigation {
     height: 60px;
   }
 }
-/* line 21, ../../src/sass/_globals/_global-navigation.scss */
+/* line 22, ../../src/sass/_globals/_global-navigation.scss */
 ._global-header-navigation .has-submenu > a {
   line-height: 60px;
 }
@@ -1689,13 +1683,6 @@ nav ul {
   font-size: 75%;
 }
 
-/* line 1, ../../src/sass/_globals/_global-footer.scss */
-._global-footer {
-  padding: 1.5em 0;
-  font-weight: 200;
-  letter-spacing: 0.05em;
-}
-
 /* line 5, ../../src/sass/_modules/_module-entry-header.scss */
 .entry-title {
   margin: 0.5em 0;
@@ -1704,12 +1691,6 @@ nav ul {
 /* line 1, ../../src/sass/_modules/_module-entry-content.scss */
 .entry-content {
   margin-top: 1em;
-}
-@media (min-width: 48em) {
-  /* line 5, ../../src/sass/_modules/_module-entry-content.scss */
-  .entry-content p {
-    text-align: justify;
-  }
 }
 
 /* line 14, ../../src/sass/_snippets/_snippet-media-object.scss */

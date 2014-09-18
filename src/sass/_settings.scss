@@ -4,11 +4,9 @@ html, body{
 }
 
 body{
-	background-color: #ddd;
-	background-image: url(../img/white_carbonfiber.png);
 	
 	@include breakpoint($breakpoint-medium) {
-		background-image: url(../img/white_carbonfiber_@2X.png);
+
 	}
 }
 

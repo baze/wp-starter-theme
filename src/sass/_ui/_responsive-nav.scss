@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  display: block;
+  display: table;
   list-style: none;
 }
 
@@ -72,4 +72,9 @@
   
   .nav-collapse .menu { display: table; table-layout: fixed; width: 100%; }
   .nav-collapse .has-submenu { display: table-cell; }
+
+  .nav-collapse li {
+    width: auto;
+    display: table-cell;
+  }
 }

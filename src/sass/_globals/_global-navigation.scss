@@ -1,4 +1,5 @@
 nav{
+
 	ul{ 
 		@extend %reset;
 		list-style: none;
@@ -11,7 +12,7 @@ nav{
 ._global-header-navigation{
 
 	@extend %dropdown;
-	
+
 	width: 100%;
 	font-size: 75%;
 	@include breakpoint($breakpoint-medium) {
