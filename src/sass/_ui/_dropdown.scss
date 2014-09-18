@@ -1,103 +1,98 @@
-%dropdown{
+%dropdown {
 
-	.menu{ @extend %transition;}
+  .menu {
+    @extend %transition;
+  }
 
-	@extend %z-layer-ui;
-	font-weight: 200;
+  @extend %z-layer-ui;
+  font-weight: 200;
 
+  ul {
 
-	ul{
-		
-		@include breakpoint($breakpoint-medium) {
-			display: table;
-    		table-layout: fixed;
-    		width: 100%;
-    	}
-	
-	li{		
-		
-		text-align: center;
+    @include breakpoint($breakpoint-medium) {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
 
-		@include breakpoint($breakpoint-medium) {
-			display: table-cell;
-		}
+    li {
+      text-align: center;
 
+      @include breakpoint($breakpoint-medium) {
+        display: table-cell;
+      }
 
-		&:hover{ 
+      &:hover {
+        @include breakpoint($breakpoint-medium) {
+          .sub-menu {
+            display: block;
+          }
+        }
+      }
 
-			@extend %box-shadow;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 1em;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
 
-			@include breakpoint($breakpoint-medium) {
-				.sub-menu{ display: block; } 
-			}
-		}
-		
+    .has-submenu {
+      position: relative;
+      a {
+      }
+    }
 
-		a{
-			display: block;
-			width: 100%;
-			height: 100%;
-			padding: 0 1em;
-			white-space: nowrap;
-			overflow: hidden;
-		}
-	}
+    .sub-menu {
+      display: none;
+      position: absolute;
+      width: 150%;
+      font-size: 85%;
 
-	.has-submenu{
-		position: relative;
-		a{}
-	}
+      li {
+        display: block;
+        float: none;
+        text-align: left;
+        &:hover {
+          box-shadow: none;
+        }
 
-	.sub-menu{
-		display: none;
-		position: absolute;
-		width: 150%;
-		font-size: 85%;
-		background-color: $white;
-		border-top: 1px solid #eee;
-		@extend %box-shadow;
+        a {
+          padding: 0.75em 1.5em;
+        }
+      }
+    }
 
-		li{ 
-			display: block;
-			float: none;
-			text-align: left;
-			&:hover{ 
-				background-color: $grey-200; 
-				box-shadow: none;
-				border-left: 4px solid $teal-a700;
-			}
+    .current-menu-item {
 
-			a{ padding: 0.75em 1.5em; } 
-		}
-	}
+      @include breakpoint($breakpoint-medium) {
+      }
 
-	.current-menu-item{
+      &:hover {
+        @include breakpoint($breakpoint-medium) {
+        }
 
-		
-		@include breakpoint($breakpoint-medium) { 
-		}
-		
-		&:hover{
-			@include breakpoint($breakpoint-medium) { 
-			}
+        .sub-menu {
 
+        }
 
-			.sub-menu{
-				left: -1px;
-			}
+        li {
+          &:hover {
+          }
+        }
 
-			li{ 
-				&:hover{}
-			}
+      }
+    }
 
-		}
-	}
+    .sub-menu .current-menu-item {
+      border: none;
+      &:hover {
+      }
+    }
 
-	.sub-menu .current-menu-item{ 
-		border: none; 
-		&:hover{}
-	}
-
-	}
+  }
 
 }
