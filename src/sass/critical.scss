@@ -1,2 +1,28 @@
-$jacket: critical;
 @import 'screen';
+
+//colors
+@import "_colors";
+
+//normalize
+@import "_normalize";
+
+//custom Breakpoint mixins
+@import "_breakpoints";
+
+//Typographic styles
+@import "_typography";
+
+//UI-Elements
+@import "_ui";
+
+//Grid based on susy and custom breakpoints
+@import "_grid";
+
+//Page Structure
+
+//Settings
+@import "_settings";
+
+//Globals (e.g. header, footer, menus, etc.)
+@import "_globals/_global-header";
+@import "_globals/_global-navigation";

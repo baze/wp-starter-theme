@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var compass      = require('gulp-compass');
 var minifyCSS    = require('gulp-minify-css');
+var gzip = require('gulp-gzip');
 var notify       = require('gulp-notify');
 var gulpif       = require('gulp-if');
 var handleErrors = require('../util/handleErrors');
@@ -23,6 +24,7 @@ gulp.task('compass', function() {
 		.pipe(compass(config))
         .on('error', handleErrors)
         .pipe(gulpif(env === 'production', minifyCSS()))
+        .pipe(gulpif(env === 'production', gzip()))
         .pipe(gulp.dest(outputDir + '/css'))
         .pipe(notify('CSS compiled, prefixed and minified.'));
 });

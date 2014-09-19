@@ -88,8 +88,8 @@ class StarterSite extends TimberSite
 
     function load_styles()
     {
-        wp_register_style('screen', THEME_URL . '/dest/css/screen.css', '', '', 'screen');
-        wp_enqueue_style('screen');
+//        wp_register_style('screen', THEME_URL . '/dest/css/screen.css', '', '', 'screen');
+//        wp_enqueue_style('screen');
     }
 
     function load_scripts()
