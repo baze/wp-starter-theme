@@ -11,7 +11,7 @@ nav{
 
 ._global-header-navigation{
 
-	@extend %dropdown;
+	@extend %dropdown !optional;
 
 	width: 100%;
 	font-size: 75%;

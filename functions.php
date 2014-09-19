@@ -20,8 +20,8 @@ class StarterSite extends TimberSite
         add_filter('get_twig', array($this, 'add_to_twig'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
-        add_action('wp_enqueue_scripts', array($this, 'load_styles'));
-        add_action('wp_footer', array($this, 'load_scripts'));
+//        add_action('wp_enqueue_scripts', array($this, 'load_styles'));
+//        add_action('wp_footer', array($this, 'load_scripts'));
         parent::__construct();
     }
 
@@ -74,7 +74,8 @@ class StarterSite extends TimberSite
         $context['secondary_menu'] = new TimberMenu("Secondary Navigation");
         $context['user_menu'] = new TimberMenu("User Navigation");
         $context['site'] = $this;
-        $context['penis'] = get_field('penis', 'option');
+        $context['template_directory_uri'] = get_template_directory_uri();
+//        $context['penis'] = get_field('penis', 'option');
         return $context;
     }
 

@@ -1,5 +1,5 @@
 <script>
-	var path = '{{ site.url }}';
+	var path = '{{ template_directory_uri }}';
 
 	function loadCSS( href, before, media ){
 		"use strict";
@@ -24,8 +24,8 @@
 		ref.parentNode.insertBefore( script, ref );
 		return script;
 	}
-	loadJS( path + "/dest/js/bundle-non-critical.js" );
+	loadJS( path + "/dest/js/bundle.js" );
 </script>
 <noscript>
-	<link rel="stylesheet" href="{{ site.url }}/dest/css/non-critical.css">
+	<link rel="stylesheet" href="{{ template_directory_uri }}/dest/css/non-critical.css">
 </noscript>
