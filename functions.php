@@ -7,6 +7,11 @@ if ( ! class_exists('Timber')) {
     return;
 }
 
+include(__DIR__ . '/_includes/cpt-leistung.php');
+include(__DIR__ . '/_includes/cpt-mitarbeiter.php');
+include(__DIR__ . '/_includes/cpt-job.php');
+include(__DIR__ . '/_includes/cpt-standort.php');
+
 define('THEME_URL', get_template_directory_uri());
 
 class StarterSite extends TimberSite
@@ -18,8 +23,9 @@ class StarterSite extends TimberSite
         add_theme_support('menus');
         add_filter('timber_context', array($this, 'add_to_context'));
         add_filter('get_twig', array($this, 'add_to_twig'));
-        add_action('init', array($this, 'register_post_types'));
+//        add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
+        add_action('init', array($this, 'register_menus'));
 //        add_action('wp_enqueue_scripts', array($this, 'load_styles'));
 //        add_action('wp_footer', array($this, 'load_scripts'));
         parent::__construct();
@@ -28,36 +34,10 @@ class StarterSite extends TimberSite
     function register_post_types()
     {
         //this is where you can register custom post types
-        register_post_type('mitarbeiter', array(
-            'label'               => 'Mitarbeiter',
-            'description'         => '',
-            'public'              => true,
-            'show_ui'             => true,
-            'show_in_menu'        => true,
-            'capability_type'     => 'post',
-            'map_meta_cap'        => true,
-            'hierarchical'        => false,
-            'rewrite'             => array('slug' => 'mitarbeiter', 'with_front' => true),
-            'query_var'           => true,
-            'exclude_from_search' => true,
-            'supports'            => array('title', 'editor', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'thumbnail', 'author', 'page-attributes', 'post-formats'),
-            'labels'              => array(
-                'name'               => 'Mitarbeiter',
-                'singular_name'      => 'Mitarbeiter',
-                'menu_name'          => 'Mitarbeiter',
-                'add_new'            => 'Neuer Mitarbeiter',
-                'add_new_item'       => 'Mitarbeiter hinzufügen',
-                'edit'               => 'Bearbeiten',
-                'edit_item'          => 'Mitarbeiter bearbeiten',
-                'new_item'           => 'Neuer Mitarbeiter',
-                'view'               => 'Ansehen',
-                'view_item'          => 'Mitarbeiter ansehen',
-                'search_items'       => 'Mitarbeiter durchsuchen',
-                'not_found'          => 'Keine Mitarbeiter gefunden',
-                'not_found_in_trash' => 'Keine Mitarbeiter im Papierkorb gefunden',
-                'parent'             => 'Übergeordneter Mitarbeiter',
-            )
-        ));
+        cptui_register_my_cpt_mitarbeiter();
+        cptui_register_my_cpt_standort();
+        cptui_register_my_cpt_leistung();
+        cptui_register_my_cpt_job();
     }
 
     function register_taxonomies()
@@ -65,17 +45,26 @@ class StarterSite extends TimberSite
         //this is where you can register custom taxonomies
     }
 
+    function register_menus()
+    {
+        register_nav_menus(array(
+            'menu_primary' => __('Hauptmenü', 'euw'),
+            'menu_secondary' => __('Footermenü', 'euw'),
+            'menu_custom' => __('Benutzerdefiniertes Menü', 'euw')
+        ));
+    }
+
     function add_to_context($context)
     {
         $context['foo'] = 'bar';
         $context['stuff'] = 'I am a value set in your functions.php file';
         $context['notes'] = 'These values are available everytime you call Timber::get_context();';
-        $context['primary_menu'] = new TimberMenu("Primary Navigation");
-        $context['secondary_menu'] = new TimberMenu("Secondary Navigation");
-        $context['user_menu'] = new TimberMenu("User Navigation");
+        $context['menu_primary'] = new TimberMenu("menu_primary");
+        $context['menu_secondary'] = new TimberMenu("menu_secondary");
+        $context['menu_custom'] = new TimberMenu("menu_custom");
         $context['site'] = $this;
         $context['template_directory_uri'] = get_template_directory_uri();
-//        $context['penis'] = get_field('penis', 'option');
+//        $context['my-option-field'] = get_field('my-option-field', 'option');
         return $context;
     }
 

@@ -1,6 +1,6 @@
 <nav class="_global-footer-navigation" role="navigation">
     <ul>
-        {% for item in secondary_menu.get_items %}
+        {% for item in menu_secondary.get_items %}
             <li class="{{ item.classes | join(' ') }}"><a href="{{ item.get_link }}">{{ item.title }}</a>
                 {% if item.get_children %}
                     <ul>
