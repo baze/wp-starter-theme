@@ -7,15 +7,19 @@ if ( ! class_exists('Timber')) {
     return;
 }
 
-include(__DIR__ . '/_includes/cpt-leistung.php');
-include(__DIR__ . '/_includes/cpt-mitarbeiter.php');
-include(__DIR__ . '/_includes/cpt-job.php');
-include(__DIR__ . '/_includes/cpt-standort.php');
+include(__DIR__ . '/inc/cpt-leistung.php');
+include(__DIR__ . '/inc/cpt-mitarbeiter.php');
+include(__DIR__ . '/inc/cpt-job.php');
+include(__DIR__ . '/inc/cpt-standort.php');
 
-include(__DIR__ . '/_includes/acf-leistung.php');
-include(__DIR__ . '/_includes/acf-mitarbeiter.php');
-include(__DIR__ . '/_includes/acf-job.php');
-include(__DIR__ . '/_includes/acf-standort.php');
+include(__DIR__ . '/inc/acf-leistung.php');
+include(__DIR__ . '/inc/acf-mitarbeiter.php');
+include(__DIR__ . '/inc/acf-job.php');
+include(__DIR__ . '/inc/acf-standort.php');
+
+include(__DIR__ . '/inc/acf-company-info.php');
+include(__DIR__ . '/inc/acf-legal.php');
+include(__DIR__ . '/inc/acf-privacy-policy.php');
 
 define('THEME_URL', get_template_directory_uri());
 
