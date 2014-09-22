@@ -8,13 +8,15 @@ if ( ! class_exists('Timber')) {
 }
 
 include(__DIR__ . '/inc/cpt-leistung.php');
-include(__DIR__ . '/inc/cpt-mitarbeiter.php');
 include(__DIR__ . '/inc/cpt-job.php');
+include(__DIR__ . '/inc/cpt-mitarbeiter.php');
+include(__DIR__ . '/inc/cpt-produkt.php');
 include(__DIR__ . '/inc/cpt-standort.php');
 
 include(__DIR__ . '/inc/acf-leistung.php');
-include(__DIR__ . '/inc/acf-mitarbeiter.php');
 include(__DIR__ . '/inc/acf-job.php');
+include(__DIR__ . '/inc/acf-mitarbeiter.php');
+include(__DIR__ . '/inc/acf-produkt.php');
 include(__DIR__ . '/inc/acf-standort.php');
 
 include(__DIR__ . '/inc/acf-company-info.php');
@@ -43,10 +45,6 @@ class StarterSite extends TimberSite
     function register_post_types()
     {
         //this is where you can register custom post types
-        cptui_register_my_cpt_mitarbeiter();
-        cptui_register_my_cpt_standort();
-        cptui_register_my_cpt_leistung();
-        cptui_register_my_cpt_job();
     }
 
     function register_taxonomies()
@@ -73,7 +71,7 @@ class StarterSite extends TimberSite
         $context['menu_custom'] = new TimberMenu("menu_custom");
         $context['site'] = $this;
         $context['template_directory_uri'] = get_template_directory_uri();
-//        $context['my-option-field'] = get_field('my-option-field', 'option');
+//        $context['my_option_field'] = get_field('my-option-field', 'option');
         return $context;
     }
 
