@@ -12,6 +12,11 @@ include(__DIR__ . '/_includes/cpt-mitarbeiter.php');
 include(__DIR__ . '/_includes/cpt-job.php');
 include(__DIR__ . '/_includes/cpt-standort.php');
 
+include(__DIR__ . '/_includes/acf-leistung.php');
+include(__DIR__ . '/_includes/acf-mitarbeiter.php');
+include(__DIR__ . '/_includes/acf-job.php');
+include(__DIR__ . '/_includes/acf-standort.php');
+
 define('THEME_URL', get_template_directory_uri());
 
 class StarterSite extends TimberSite
