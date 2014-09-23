@@ -1,11 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjoernmartensen
- * Date: 22.09.14
- * Time: 16:31
- * Template Name: Impressum
- */
+/*
+Template Name: Impressum
+*/
 
 $context = Timber::get_context();
 $post = new TimberPost();

@@ -1,11 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjoernmartensen
- * Date: 22.09.14
- * Time: 15:56
- * Template Name: Datenschutz
- */
+/*
+Template Name: Datenschutz
+*/
 
 $context = Timber::get_context();
 $post = new TimberPost();

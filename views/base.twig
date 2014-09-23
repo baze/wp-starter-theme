@@ -1,12 +1,10 @@
-{% include 'html-header.twig' %}  
-{% block head %}
-{% endblock %}  
-</head>
-    <body class="{{body_class}}" data-source="base.twig">
+{% include 'header.twig' %}
+<body class="{{ body_class }}" itemscope itemtype="http://schema.org/WebPage">
     <div class="wrapper">
-        {% block header %}
-            {% include('_globals/_global-header.twig') %}
-        {% endblock %}
+
+        {% include('_globals/_global-oldbrowser.twig') %}
+        {% include('_globals/_global-navbar.twig') %}
+        {% include('_globals/_global-header.twig') %}
 
         <main class="_global-main {{ post.class }}" role="main" id="main">
             {% block content %}
