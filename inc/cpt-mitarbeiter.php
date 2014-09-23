@@ -34,3 +34,5 @@ function cptui_register_my_cpt_mitarbeiter()
         )
     ));
 }
+
+include(__DIR__ . '/acf-mitarbeiter.php');

@@ -33,3 +33,5 @@ function cptui_register_my_cpt_standort()
         )
     ));
 }
+
+include(__DIR__ . '/acf-standort.php');

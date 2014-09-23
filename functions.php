@@ -13,12 +13,6 @@ include(__DIR__ . '/inc/cpt-mitarbeiter.php');
 include(__DIR__ . '/inc/cpt-produkt.php');
 include(__DIR__ . '/inc/cpt-standort.php');
 
-include(__DIR__ . '/inc/acf-leistung.php');
-include(__DIR__ . '/inc/acf-job.php');
-include(__DIR__ . '/inc/acf-mitarbeiter.php');
-include(__DIR__ . '/inc/acf-produkt.php');
-include(__DIR__ . '/inc/acf-standort.php');
-
 include(__DIR__ . '/inc/acf-company-info.php');
 include(__DIR__ . '/inc/acf-legal.php');
 include(__DIR__ . '/inc/acf-privacy-policy.php');
@@ -68,6 +62,8 @@ class StarterSite extends TimberSite
         $context['menu_primary'] = new TimberMenu("menu_primary");
         $context['menu_secondary'] = new TimberMenu("menu_secondary");
         $context['menu_custom'] = new TimberMenu("menu_custom");
+
+        $context['options'] = get_fields('options');
 
         $context['global_businessinfo_firmenbezeichnung'] = get_field('firmenbezeichnung', 'option');
         $context['global_businessinfo_strasse_hausnummer'] = get_field('strasse_hausnummer', 'option');

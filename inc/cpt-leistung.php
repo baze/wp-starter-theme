@@ -33,3 +33,5 @@ function cptui_register_my_cpt_leistung()
         )
     ));
 }
+
+include(__DIR__ . '/acf-leistung.php');

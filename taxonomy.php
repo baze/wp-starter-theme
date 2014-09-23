@@ -25,4 +25,7 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+$term = $wp_query->queried_object;
+$context['term'] = new TimberTerm($term->term_id);
+
+Timber::render(array('taxonomy-' . $term->taxonomy . '.twig', 'taxonomy.twig'), $context);
