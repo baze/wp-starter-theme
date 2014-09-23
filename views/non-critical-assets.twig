@@ -12,7 +12,7 @@
 		} );
 		return ss;
 	 }
-	loadCSS({{ theme.uri }} + "/dest/css/non-critical.css" );
+	loadCSS("{{ theme.uri }}/dest/css/non-critical.css" );
 
 	function loadJS( src ){
 		"use strict";
@@ -22,7 +22,7 @@
 		ref.parentNode.insertBefore( script, ref );
 		return script;
 	}
-	loadJS({{ theme.uri }} + "/dest/js/bundle.js" );
+	loadJS("{{ theme.uri }}/dest/js/bundle.js" );
 </script>
 <noscript>
 	<link rel="stylesheet" href="{{ theme.uri }}/dest/css/non-critical.css">
