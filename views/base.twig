@@ -4,12 +4,9 @@
 </head>
     <body class="{{body_class}}" data-source="base.twig">
     <div class="wrapper">
-        <header class="_global-header" role="banner" id="top">
-            {% block header %}
-                {% include('_globals/_global-header-logo.twig') %}
-                {% include('_globals/_global-header-navigation.twig') %}
-            {% endblock %}
-        </header>
+        {% block header %}
+            {% include('_globals/_global-header.twig') %}
+        {% endblock %}
 
         <main class="_global-main {{ post.class }}" role="main" id="main">
             {% block content %}
@@ -17,9 +14,9 @@
             {% endblock %}
         </main>
 
-        <footer class="_global-footer" role="contentinfo">
-            {% include '_globals/_global-footer.twig' %}
-        </footer>
+        {% block footer %}
+            {% include('_globals/_global-footer.twig') %}
+        {% endblock %}
     </div>
     {% include('non-critical-assets.twig') %}
     {{ wp_footer }}

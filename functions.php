@@ -63,15 +63,23 @@ class StarterSite extends TimberSite
 
     function add_to_context($context)
     {
-        $context['foo'] = 'bar';
-        $context['stuff'] = 'I am a value set in your functions.php file';
-        $context['notes'] = 'These values are available everytime you call Timber::get_context();';
+        $context['site'] = $this;
+        $context['template_directory_uri'] = get_template_directory_uri();
+
         $context['menu_primary'] = new TimberMenu("menu_primary");
         $context['menu_secondary'] = new TimberMenu("menu_secondary");
         $context['menu_custom'] = new TimberMenu("menu_custom");
-        $context['site'] = $this;
-        $context['template_directory_uri'] = get_template_directory_uri();
-//        $context['my_option_field'] = get_field('my-option-field', 'option');
+
+        $context['global_businessinfo_firmenbezeichnung'] = get_field('firmenbezeichnung', 'option');
+        $context['global_businessinfo_strasse_hausnummer'] = get_field('strasse_hausnummer', 'option');
+        $context['global_businessinfo_postleitzahl'] = get_field('postleitzahl', 'option');
+        $context['global_businessinfo_ort'] = get_field('ort', 'option');
+        $context['global_businessinfo_bundesland'] = get_field('bundesland', 'option');
+        $context['global_businessinfo_telefon'] = get_field('telefon', 'option');
+        $context['global_businessinfo_telefon_link'] = get_field('telefon-link', 'option');
+        $context['global_businessinfo_telefax'] = get_field('telefax', 'option');
+        $context['global_businessinfo_telefax_link'] = get_field('telefax-link', 'option');
+        $context['global_businessinfo_email'] = get_field('e-mail', 'option');
         return $context;
     }
 
