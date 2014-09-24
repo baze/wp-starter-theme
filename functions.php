@@ -31,6 +31,7 @@ class StarterSite extends TimberSite
 //        add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'register_menus'));
+        add_action('init', array($this, 'register_strings'));
 //        add_action('wp_enqueue_scripts', array($this, 'load_styles'));
 //        add_action('wp_footer', array($this, 'load_scripts'));
         parent::__construct();
@@ -39,6 +40,48 @@ class StarterSite extends TimberSite
     function register_post_types()
     {
         //this is where you can register custom post types
+    }
+
+    function register_strings()
+    {
+        // Datenschutz
+        pll_register_string('datenschutz_preambel_title', 'Datenschutz', 'polylang', false);
+        pll_register_string('datenschutz_preambel', get_field('datenschutz-preambel', 'options'), 'polylang', true);
+
+        pll_register_string('datenschutz_like_title', 'Datenschutzerklärung für die Nutzung von Facebook-Plugins
+        (Like-Button)', 'polylang', false);
+        pll_register_string('datenschutz_like', get_field('datenschutz-like', 'options'), 'polylang', true);
+
+        pll_register_string('datenschutz_analytics_title', 'Datenschutzerklärung für die Nutzung von Google Analytics', 'polylang', false);
+        pll_register_string('datenschutz_analytics', get_field('datenschutz-analytics', 'options'), 'polylang', true);
+
+        pll_register_string('datenschutz_adsense_title', 'Datenschutzerklärung für die Nutzung von Google Adsense', 'polylang', false);
+        pll_register_string('datenschutz_adsense', get_field('datenschutz-adsense', 'options'), 'polylang', true);
+
+        pll_register_string('datenschutz_plus_title', 'Datenschutzerklärung für die Nutzung von Google +1', 'polylang', false);
+        pll_register_string('datenschutz_plus', get_field('datenschutz-plus', 'options'), 'polylang', true);
+
+        pll_register_string('datenschutz_twitter_title', 'Datenschutzerklärung für die Nutzung von Twitter', 'polylang', false);
+        pll_register_string('datenschutz_twitter', get_field('datenschutz-twitter', 'options'), 'polylang', true);
+
+        // Impressum
+        pll_register_string('disclaimer_anzeigen', get_field('disclaimer_anzeigen', 'options'), 'polylang', false);
+        pll_register_string('haftung_fuer_inhalte', get_field('haftung-fuer-inhalte', 'options'), 'polylang', true);
+        pll_register_string('haftung_fuer_links', get_field('haftung-fuer-links', 'options'), 'polylang', true);
+        pll_register_string('urheberrecht', get_field('urheberrecht', 'options'), 'polylang', true);
+        pll_register_string('firmenbezeichnung', get_field('firmenbezeichnung', 'options'), 'polylang', false);
+        pll_register_string('strasse_hausnummer', get_field('strasse_hausnummer', 'options'), 'polylang', false);
+        pll_register_string('postleitzahl', get_field('postleitzahl', 'options'), 'polylang', false);
+        pll_register_string('ort', get_field('ort', 'options'), 'polylang', false);
+        pll_register_string('vertretungsberechtigt', get_field('vertretungsberechtigt', 'options'), 'polylang', true);
+        pll_register_string('telefon', get_field('telefon', 'options'), 'polylang', false);
+        pll_register_string('telefax', get_field('telefax', 'options'), 'polylang', false);
+        pll_register_string('email', get_field('e-mail', 'options'), 'polylang', false);
+        pll_register_string('registereintrag_art', get_field('registereintrag-art', 'options'), 'polylang', true);
+        pll_register_string('registergericht', get_field('registergericht', 'options'), 'polylang', true);
+        pll_register_string('registernummer', get_field('registernummer', 'options'), 'polylang', true);
+        pll_register_string('ust_id', get_field('ust-id', 'options'), 'polylang', false);
+
     }
 
     function register_taxonomies()
@@ -65,16 +108,25 @@ class StarterSite extends TimberSite
 
         $context['options'] = get_fields('options');
 
-        $context['global_businessinfo_firmenbezeichnung'] = get_field('firmenbezeichnung', 'option');
-        $context['global_businessinfo_strasse_hausnummer'] = get_field('strasse_hausnummer', 'option');
-        $context['global_businessinfo_postleitzahl'] = get_field('postleitzahl', 'option');
-        $context['global_businessinfo_ort'] = get_field('ort', 'option');
-        $context['global_businessinfo_bundesland'] = get_field('bundesland', 'option');
-        $context['global_businessinfo_telefon'] = get_field('telefon', 'option');
-        $context['global_businessinfo_telefon_link'] = get_field('telefon-link', 'option');
-        $context['global_businessinfo_telefax'] = get_field('telefax', 'option');
-        $context['global_businessinfo_telefax_link'] = get_field('telefax-link', 'option');
-        $context['global_businessinfo_email'] = get_field('e-mail', 'option');
+        $context['language_switcher'] = pll_the_languages($args = [
+            'show_names'             => 0,
+            'show_flags'             => 1,
+            'hide_if_empty'          => 0,
+            'hide_if_no_translation' => 0,
+            'hide_current'           => 0,
+            'echo'                   => 0
+        ]);
+
+        $context['global_businessinfo_firmenbezeichnung'] = get_field('firmenbezeichnung', 'options');
+        $context['global_businessinfo_strasse_hausnummer'] = get_field('strasse_hausnummer', 'options');
+        $context['global_businessinfo_postleitzahl'] = get_field('postleitzahl', 'options');
+        $context['global_businessinfo_ort'] = get_field('ort', 'options');
+        $context['global_businessinfo_bundesland'] = get_field('bundesland', 'options');
+        $context['global_businessinfo_telefon'] = get_field('telefon', 'options');
+        $context['global_businessinfo_telefon_link'] = get_field('telefon-link', 'options');
+        $context['global_businessinfo_telefax'] = get_field('telefax', 'options');
+        $context['global_businessinfo_telefax_link'] = get_field('telefax-link', 'options');
+        $context['global_businessinfo_email'] = get_field('e-mail', 'options');
         return $context;
     }
 

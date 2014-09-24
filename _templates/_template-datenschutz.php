@@ -7,23 +7,22 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$context['datenschutz_preambel_title'] = translate('Datenschutz', 'euw');
-$context['datenschutz_preambel'] = get_field('datenschutz-preambel', 'option');
+$context['datenschutz_preambel_title'] = pll__('Datenschutz');
+$context['datenschutz_preambel'] = pll__(get_field('datenschutz-preambel', 'options'));
 
-$context['datenschutz_like_title'] = translate('Datenschutzerklärung für die Nutzung von Facebook-Plugins
-(Like-Button)', 'euw');
-$context['datenschutz_like'] = get_field('datenschutz-like', 'option');
+$context['datenschutz_like_title'] = pll__('Datenschutzerklärung für die Nutzung von Facebook-Plugins (Like-Button)');
+$context['datenschutz_like'] = pll__(get_field('datenschutz-like', 'options'));
 
-$context['datenschutz_analytics_title'] = translate('Datenschutzerklärung für die Nutzung von Google Analytics', 'euw');
-$context['datenschutz_analytics'] = get_field('datenschutz-analytics', 'option');
+$context['datenschutz_analytics_title'] = pll__('Datenschutzerklärung für die Nutzung von Google Analytics');
+$context['datenschutz_analytics'] = pll__(get_field('datenschutz-analytics', 'options'));
 
-$context['datenschutz_adsense_title'] = translate('Datenschutzerklärung für die Nutzung von Google Adsense', 'euw');
-$context['datenschutz_adsense'] = get_field('datenschutz-adsense', 'option');
+$context['datenschutz_adsense_title'] = pll__('Datenschutzerklärung für die Nutzung von Google Adsense');
+$context['datenschutz_adsense'] = pll__(get_field('datenschutz-adsense', 'options'));
 
-$context['datenschutz_plus_title'] = translate('Datenschutzerklärung für die Nutzung von Google +1', 'euw');
-$context['datenschutz_plus'] = get_field('datenschutz-plus', 'option');
+$context['datenschutz_plus_title'] = pll__('Datenschutzerklärung für die Nutzung von Google +1');
+$context['datenschutz_plus'] = pll__(get_field('datenschutz-plus', 'options'));
 
-$context['datenschutz_twitter_title'] = translate('Datenschutzerklärung für die Nutzung von Twitter', 'euw');
-$context['datenschutz_twitter'] = get_field('datenschutz-twitter', 'option');
+$context['datenschutz_twitter_title'] = pll__('Datenschutzerklärung für die Nutzung von Twitter');
+$context['datenschutz_twitter'] = pll__(get_field('datenschutz-twitter', 'options'));
 
 Timber::render(array('page-datenschutz.twig', 'page.twig'), $context);

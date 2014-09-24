@@ -8,44 +8,44 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 // disclaimer
-$context['show_disclaimer'] = get_field('disclaimer_anzeigen', 'option');
-$context['title_disclaimer'] = translate('Disclaimer', 'euw');
+$context['title_disclaimer'] = pll__('Disclaimer');
+$context['show_disclaimer'] = pll__(get_field('disclaimer_anzeigen', 'options'));
 
-$context['haftung_fuer_inhalte_title'] = translate('Haftung für Inhalte', 'euw');
-$context['haftung_fuer_inhalte'] = get_field('haftung-fuer-inhalte', 'option');
+$context['haftung_fuer_inhalte_title'] = pll__('Haftung für Inhalte');
+$context['haftung_fuer_inhalte'] = pll__(get_field('haftung-fuer-inhalte', 'options'));
 
-$context['haftung_fuer_links_title'] = translate('Haftung für Inhalte', 'euw');
-$context['haftung_fuer_links'] = get_field('haftung-fuer-inhalte', 'option');
+$context['haftung_fuer_links_title'] = pll__('Haftung für Links');
+$context['haftung_fuer_links'] = pll__(get_field('haftung-fuer-links', 'options'));
 
-$context['urheberrecht_title'] = translate('Urheberrecht', 'euw');
-$context['urheberrecht'] = get_field('urheberrecht', 'option');
+$context['urheberrecht_title'] = pll__('Urheberrecht');
+$context['urheberrecht'] = pll__(get_field('urheberrecht', 'options'));
 
 // tmg
-$context['title_tmg'] = translate('Angaben gemäß § 5 TMG:', 'euw');
+$context['title_tmg'] = pll__('Angaben gemäß § 5 TMG:');
 
-$context['firmenbezeichnung'] = get_field('firmenbezeichnung', 'option');
-$context['strasse_hausnummer'] = get_field('strasse_hausnummer', 'option');
-$context['postleitzahl'] = get_field('postleitzahl', 'option');
-$context['ort'] = get_field('ort', 'option');
+$context['firmenbezeichnung'] = pll__(get_field('firmenbezeichnung', 'options'));
+$context['strasse_hausnummer'] = pll__(get_field('strasse_hausnummer', 'options'));
+$context['postleitzahl'] = pll__(get_field('postleitzahl', 'options'));
+$context['ort'] = pll__(get_field('ort', 'options'));
 
-$context['vertretungsberechtigt_title'] = translate('Vertreten durch:', 'euw');
-$context['vertretungsberechtigt'] = get_field('vertretungsberechtigt', 'option');
+$context['vertretungsberechtigt_title'] = pll__('Vertreten durch:');
+$context['vertretungsberechtigt'] = pll__(get_field('vertretungsberechtigt', 'options'));
 
-$context['kontakt_title'] = translate('Kontakt', 'euw');
-$context['telefon_label'] = translate('Telefon:', 'euw');
-$context['telefon'] = get_field('telefon', 'option');
-$context['telefax_label'] = translate('Telefax:', 'euw');
-$context['telefax'] = get_field('telefax', 'option');
-$context['email_label'] = translate('E-Mail:', 'euw');
-$context['email'] = get_field('e-mail', 'option');
+$context['kontakt_title'] = pll__('Kontakt');
+$context['telefon_label'] = pll__('Telefon:');
+$context['telefon'] = pll__(get_field('telefon', 'options'));
+$context['telefax_label'] = pll__('Telefax:');
+$context['telefax'] = pll__(get_field('telefax', 'options'));
+$context['email_label'] = pll__('E-Mail:');
+$context['email'] = pll__(get_field('e-mail', 'options'));
 
-$context['registereintrag_title'] = translate('Registereintrag', 'euw');
-$context['registereintrag_art'] = get_field('registereintrag-art', 'option');
-$context['registergericht'] = get_field('registergericht', 'option');
-$context['registernummer'] = get_field('registernummer', 'option');
+$context['registereintrag_title'] = pll__('Registereintrag');
+$context['registereintrag_art'] = pll__(get_field('registereintrag-art', 'options'));
+$context['registergericht'] = pll__(get_field('registergericht', 'options'));
+$context['registernummer'] = pll__(get_field('registernummer', 'options'));
 
-$context['ust_id_title'] = translate('Umsatzsteuer-ID:', 'euw');
-$context['ust_id_label'] = translate('Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:', 'euw');
-$context['ust_id'] = get_field('ust-id', 'option');
+$context['ust_id_title'] = pll__('Umsatzsteuer-ID:');
+$context['ust_id_label'] = pll__('Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:');
+$context['ust_id'] = pll__(get_field('ust-id', 'options'));
 
 Timber::render(array('page-impressum.twig', 'page.twig'), $context);

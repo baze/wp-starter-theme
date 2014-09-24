@@ -7,6 +7,9 @@
         {% include('_globals/_global-header.twig') %}
 
         <main class="_global-main {{ post.class }}" role="main" id="main">
+
+            {% include('_snippets/_snippet-language-switcher.twig') %}
+
             {% block content %}
                 Sorry, no content
             {% endblock %}

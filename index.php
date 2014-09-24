@@ -13,22 +13,20 @@
  * @since        Timber 0.1
  */
 
-	if ( ! class_exists('Timber')) {
-        echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
-        return;
-    }
-	$context = Timber::get_context();
-
-    $args = array(
+$context = Timber::get_context();
+$args = array(
     'posts_per_page' => -1,
-    'post_type'      => 'mitarbeiter');
+    'post_type'      => 'mitarbeiter'
+);
 
-	$context['posts'] = Timber::get_posts($args);
-	$context['foo'] = 'bar';
-	$templates = array('index.twig');
-	if (is_home()) {
-        array_unshift($templates, 'home.twig');
-    }
-	Timber::render($templates, $context);
+$context['posts'] = Timber::get_posts($args);
+
+_e('foo', 'euw');
+
+$templates = array('index.twig');
+if (is_home()) {
+    array_unshift($templates, 'home.twig');
+}
+Timber::render($templates, $context);
 
 
