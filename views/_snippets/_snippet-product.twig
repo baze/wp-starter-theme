@@ -2,10 +2,8 @@
 
     <h1 class="produkt-titel" itemprop="name">{{ product.title }}</h1>
 
-    <!-- Zwingend wichtige inhalte -->
     <section class="produkt-section section--full">
 
-        <!-- Produktbild -->
         <figure class="produkt-figure">
             {% if post.thumbnail %}
             <img src="{{ product.thumbnail.src }}" class="produkt-figure-img" itemprop="image" />
@@ -14,162 +12,19 @@
                 {{ product.thumbnail.alt }}
             </figcaption>
         </figure>
-        <!-- Produktbild -->
 
-        <!-- Produktbeschreibung -->
-        <div class="produkt-description" itemprop="description">
+        <div class="produkt-features" itemprop="features">
 
-            <!-- Fließtext -->
-            <div class="produkt-description-content">
-                {{ post.content }}
-            </div>
-            <!-- Fließtext -->
-
-            <!-- Zusatzinfos -->
-            <div class="produkt-description-additional">
-
-                <!-- Artikelnummern -->
-                {% for description in product.get_field('repeater_field_name') %}
-                    {{ description.title }}
-
-                {% endfor %}
-                <?php if( have_rows('repeater_field_name') ): ?>
-                <ul class="produkt-description-additional-sku-list">
-                    <?php while ( have_rows('repeater_field_name') ) : the_row(); ?>
-                    <li class="produkt-description-additional-sku-list-entry">
-                        <strong class="produkt-description-additional-sku-list-entry-type"><?php the_sub_field('produkt-description-additional-sku-list-entry-type'); ?></strong>
-                        <span class="produkt-description-additional-sku-list-entry-number"><?php the_sub_field('produkt-description-additional-sku-list-entry-number'); ?></span>
-                    </li>
-                    <?php endwhile; ?>
+            {% if product.get_field('features') %}
+                <ul>
+                    {% for feature in product.get_field('features') %}
+                        <li>{{ feature.title }}</li>
+                    {% endfor %}
                 </ul>
-                <?php else : ?>
-                <?php endif; ?>
-                <!-- Artikelnummern -->
-
-                <!-- Call-To-Action -->
-                <?php if( have_rows('produkt-description-additional-cta') ): ?>
-                <div class="produkt-description-additional-cta">
-                    <?php while ( have_rows('produkt-description-additional-cta') ) : the_row(); ?>
-                    <h3 class="produkt-description-additional-cta-headline"><?php the_sub_field('produkt-description-additional-cta-headline'); ?></h3>
-
-                    <div class="produkt-description-additional-cta-content"><?php the_sub_field('produkt-description-additional-cta-content'); ?></div>
-                    <a class="produkt-description-additional-cta-link"
-                       href="<?php the_sub_field('produkt-description-additional-cta-link'); ?>">
-                        <button class="produkt-description-additional-cta-text"><?php the_sub_field('produkt-description-additional-cta-text'); ?></button>
-                        <?php endwhile; ?>
-                </div>
-                <?php else : ?>
-                <?php endif; ?>
-                <!-- Call-To-Action -->
-
-
-            </div>
-            <!-- Zusatzinfos -->
-
-        </div>
-        <!-- Produktbeschreibung -->
-
-    </section>
-    <!-- Zwingend wichtige inhalte -->
-
-    <!-- Flexible Inhaltsfelder für Produktseiten -->
-    <?php if( have_rows('produkt-section') ): ?>
-    <section class="produkt-section section--hide" data-state="closed">
-        <?php while ( have_rows('produkt-section') ) : the_row(); ?>
-
-        <h3 class="produkt-section-headline"><?php the_sub_field('produkt-section-headline'); ?></h3>
-
-
-        <?php if( have_rows('produkt-section-container') ): ?>
-        <div class="produkt-section-container">
-            <?php while ( have_rows('produkt-section-container') ) : the_row(); ?>
-
-            <?php if( get_row_layout() == 'produkt-gallery-layout' ): ?>
-
-            <!-- Produkt-Galerie -->
-            <?php $images = get_sub_field('produkt-gallery'); if( $images ): ?>
-            <div class="produkt-gallery">
-                <?php foreach( $images as $image ): ?>
-
-                <!-- Image object -->
-                <a href="<?php echo $image['url']; ?>">
-                    <figure class="produkt-gallery-figure">
-                        <img class="produkt-gallery-figure-img" src="<?php echo $image['sizes']['thumbnail']; ?>"
-                             alt="<?php echo $image['alt']; ?>">
-                        <figcaption class="produkt-gallery-caption"><?php echo $image['caption']; ?></figcaption>
-                    </figure>
-                </a>
-                <!-- Image object -->
-
-                <?php endforeach; ?>
-            </div>
-            <?php endif; ?>
-            <!-- Produkt-Galerie -->
-
-            <?php  elseif( get_row_layout() == 'produkt-additional-infos-layout' ): ?>
-
-            <!-- Container für Hauptteil und Sidebar -->
-            <div class="produkt-additional-infos">
-
-                <!-- Hauptteil -->
-                <div class="produkt-additional-infos-main">
-
-                    <!-- Container für Freitext -->
-                    <div class="produkt-additional-infos-main-section">
-                        <h4 class="produkt-additional-infos-main-section-headline"><?php the_sub_field('produkt-additional-infos-main-section-headline'); ?></h4>
-
-                        <div class="produkt-additional-infos-main-section-content">
-                            <?php the_sub_field('produkt-additional-infos-main-section-content'); ?>
-                        </div>
-                    </div>
-                    <!-- Container für Freitext -->
-
-                </div>
-                <!-- Hauptteil -->
-
-                <!-- Sidebar -->
-                <?php if( have_rows('produkt-additional-infos-sidebar') ): ?>
-                <aside class="produkt-additional-infos-sidebar">
-                    <?php while ( have_rows('produkt-additional-infos-sidebar') ) : the_row(); ?>
-
-                    <!-- Sidebar-Eintrag -->
-                    <div class="produkt-additional-infos-sidebar-entry">
-                        <figure class="produkt-additional-infos-sidebar-entry-figure">
-                            <img src="<?php the_sub_field('produkt-additional-infos-sidebar-entry-figure'); ?>"
-                                 alt="<?php the_sub_field('produkt-additional-infos-sidebar-entry-text'); ?>">
-                        </figure>
-                        <div class="produkt-additional-infos-sidebar-entry-text">
-                            <?php the_sub_field('produkt-additional-infos-sidebar-entry-text'); ?>
-                        </div>
-                    </div>
-                    <!-- Sidebar-Eintrag -->
-
-                    <?php endwhile; ?>
-                </aside>
-                <?php else : ?>
-                <?php endif; ?>
-                <!-- Sidebar -->
-
-            </div>
-            <!-- Container für Hauptteil und Sidebar -->
-
-            <?php endif; ?>
-
-            <?php endwhile; ?>
-
-            <?php else : ?>
-
-            <?php endif; ?>
+            {% endif %}
 
         </div>
 
-        <?php endwhile; ?>
     </section>
-    <?php
-else :
-//do nuthin'
-endif; 
-?>
-    <!-- Flexible Inhaltsfelder für Produktseiten -->
 
 </article>
