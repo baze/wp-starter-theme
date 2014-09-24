@@ -81,7 +81,6 @@ class StarterSite extends TimberSite
         pll_register_string('registergericht', get_field('registergericht', 'options'), 'polylang', true);
         pll_register_string('registernummer', get_field('registernummer', 'options'), 'polylang', true);
         pll_register_string('ust_id', get_field('ust-id', 'options'), 'polylang', false);
-
     }
 
     function register_taxonomies()
