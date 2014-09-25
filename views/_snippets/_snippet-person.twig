@@ -4,4 +4,5 @@
     {% endif %}
     <h4 class="_content-agentur-team-member-name" itemprop="name">{{ person.title }}</h4>
     <div class="_content-agentur-team-member-position" itemprop="jobtitle">{{ person.get_field('jobtitle') }}</div>
+    <div class="_content-agentur-team-member-description" itemprop="description">{{ person.post_excerpt }}</div>
 </article>

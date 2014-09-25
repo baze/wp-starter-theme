@@ -2,6 +2,8 @@
 
 {% block content %}
 
+    {% include('_content/_content-jobs.twig') with {'posts' : jobs} %}
+
     <div class="_content-page">
         {% include('_modules/_module-entry-header.twig') %}
         {% include('_modules/_module-entry-content.twig') %}

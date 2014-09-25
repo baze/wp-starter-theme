@@ -19,9 +19,7 @@
 
 ._snippet-language-switcher-list,
 ._snippet-language-switcher-toggle{
-	
-	@extend %box-shadow;
-	background-color: $white;
+
 	
 }
 
@@ -29,9 +27,6 @@
 		@extend %reset;
 		list-style: none;
 		padding: 1em 0.5em;
-		position: absolute;
-		@include translateY(-100%);
-		@extend %transition;
 	}
 
 ._snippet-language-switcher-toggle{ 
