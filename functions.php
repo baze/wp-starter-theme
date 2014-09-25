@@ -174,10 +174,7 @@ function srcset_post_thumbnail($defaultSize = 'medium')
         'full'
     ];
 
-    $html = '<img sizes="';
-    $html .= '(max-width: 30em) 100vw, ';
-    $html .= '(max-width: 50em) 50vw, ';
-    $html .= 'calc(33vw - 100px)" ';
+    $html = '<img ';
     $html .= 'srcset="';
 
     $thumb_id = get_post_thumbnail_id();
@@ -200,6 +197,11 @@ function srcset_post_thumbnail($defaultSize = 'medium')
     $thumbMedium = wp_get_attachment_image_src($thumb_id, $defaultSize, true);
 
     $html .= '" ';
+    $html .= 'sizes="';
+    $html .= '(max-width: 48em) 672px, ';
+    $html .= '(max-width: 60em) 1080px, ';
+    $html .= '(max-width: 75em) 1425px';
+    $html .= '"';
     $html .= 'src="' . $thumbMedium[0] . '" alt="' . $alt . '">';
 
     return $html;
