@@ -23,10 +23,10 @@ $context['urheberrecht'] = pll__(get_field('urheberrecht', 'options'));
 // tmg
 $context['title_tmg'] = pll__('Angaben gemäß § 5 TMG:');
 
-$context['firmenbezeichnung'] = pll__(get_field('firmenbezeichnung', 'options'));
-$context['strasse_hausnummer'] = pll__(get_field('strasse_hausnummer', 'options'));
-$context['postleitzahl'] = pll__(get_field('postleitzahl', 'options'));
-$context['ort'] = pll__(get_field('ort', 'options'));
+$context['firmenbezeichnung'] = get_field('firmenbezeichnung', 'options');
+$context['strasse_hausnummer'] = get_field('strasse_hausnummer', 'options');
+$context['postleitzahl'] = get_field('postleitzahl', 'options');
+$context['ort'] = get_field('ort', 'options');
 
 $context['vertretungsberechtigt_title'] = pll__('Vertreten durch:');
 $context['vertretungsberechtigt'] = pll__(get_field('vertretungsberechtigt', 'options'));
