@@ -3,28 +3,22 @@
     <h1 class="produkt-titel" itemprop="name">{{ product.title }}</h1>
 
     <section class="produkt-section section--full">
+        {#{% include('_modules/_module-produkt-figure.twig') %}#}
+        {#{% include('_modules/_module-produkt-beschreibung.twig') %}#}
 
-        <figure class="produkt-figure">
-            {% if post.thumbnail %}
-            <img src="{{ product.thumbnail.src }}" class="produkt-figure-img" itemprop="image" />
-            {% endif %}
-            <figcaption class="produkt-figure-caption">
-                {{ product.thumbnail.alt }}
-            </figcaption>
-        </figure>
+        {#<div class="produkt-features" itemprop="features">#}
 
-        <div class="produkt-features" itemprop="features">
+        {#{% if product.get_field('features') %}#}
+        {#<ul>#}
+        {#{% for feature in product.get_field('features') %}#}
+        {#<li>{{ feature.title }}</li>#}
+        {#{% endfor %}#}
+        {#</ul>#}
+        {#{% endif %}#}
 
-            {% if product.get_field('features') %}
-                <ul>
-                    {% for feature in product.get_field('features') %}
-                        <li>{{ feature.title }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-
-        </div>
-
+        {#</div>#}
     </section>
+
+    {% include('_modules/_module-produkt-section.twig') %}
 
 </article>

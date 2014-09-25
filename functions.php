@@ -45,42 +45,44 @@ class StarterSite extends TimberSite
     function register_strings()
     {
         // Datenschutz
-        pll_register_string('datenschutz_preambel_title', 'Datenschutz', 'polylang', false);
-        pll_register_string('datenschutz_preambel', get_field('datenschutz-preambel', 'options'), 'polylang', true);
+        pll_register_string('datenschutz_preambel_title', 'Datenschutz', 'euw', false);
+        pll_register_string('datenschutz_preambel', get_field('datenschutz-preambel', 'options'), 'euw', true);
 
         pll_register_string('datenschutz_like_title', 'Datenschutzerklärung für die Nutzung von Facebook-Plugins
-        (Like-Button)', 'polylang', false);
-        pll_register_string('datenschutz_like', get_field('datenschutz-like', 'options'), 'polylang', true);
+        (Like-Button)', 'euw', false);
+        pll_register_string('datenschutz_like', get_field('datenschutz-like', 'options'), 'euw', true);
 
-        pll_register_string('datenschutz_analytics_title', 'Datenschutzerklärung für die Nutzung von Google Analytics', 'polylang', false);
-        pll_register_string('datenschutz_analytics', get_field('datenschutz-analytics', 'options'), 'polylang', true);
+        pll_register_string('datenschutz_analytics_title', 'Datenschutzerklärung für die Nutzung von Google
+        Analytics', 'euw', false);
+        pll_register_string('datenschutz_analytics', get_field('datenschutz-analytics', 'options'), 'euw', true);
 
-        pll_register_string('datenschutz_adsense_title', 'Datenschutzerklärung für die Nutzung von Google Adsense', 'polylang', false);
-        pll_register_string('datenschutz_adsense', get_field('datenschutz-adsense', 'options'), 'polylang', true);
+        pll_register_string('datenschutz_adsense_title', 'Datenschutzerklärung für die Nutzung von Google Adsense', 'euw', false);
+        pll_register_string('datenschutz_adsense', get_field('datenschutz-adsense', 'options'), 'euw', true);
 
-        pll_register_string('datenschutz_plus_title', 'Datenschutzerklärung für die Nutzung von Google +1', 'polylang', false);
-        pll_register_string('datenschutz_plus', get_field('datenschutz-plus', 'options'), 'polylang', true);
+        pll_register_string('datenschutz_plus_title', 'Datenschutzerklärung für die Nutzung von Google +1', 'euw', false);
+        pll_register_string('datenschutz_plus', get_field('datenschutz-plus', 'options'), 'euw', true);
 
-        pll_register_string('datenschutz_twitter_title', 'Datenschutzerklärung für die Nutzung von Twitter', 'polylang', false);
-        pll_register_string('datenschutz_twitter', get_field('datenschutz-twitter', 'options'), 'polylang', true);
+        pll_register_string('datenschutz_twitter_title', 'Datenschutzerklärung für die Nutzung von Twitter', 'euw',
+            false);
+        pll_register_string('datenschutz_twitter', get_field('datenschutz-twitter', 'options'), 'euw', true);
 
         // Impressum
-        pll_register_string('disclaimer_anzeigen', get_field('disclaimer_anzeigen', 'options'), 'polylang', false);
-        pll_register_string('haftung_fuer_inhalte', get_field('haftung-fuer-inhalte', 'options'), 'polylang', true);
-        pll_register_string('haftung_fuer_links', get_field('haftung-fuer-links', 'options'), 'polylang', true);
-        pll_register_string('urheberrecht', get_field('urheberrecht', 'options'), 'polylang', true);
-        pll_register_string('firmenbezeichnung', get_field('firmenbezeichnung', 'options'), 'polylang', false);
-        pll_register_string('strasse_hausnummer', get_field('strasse_hausnummer', 'options'), 'polylang', false);
-        pll_register_string('postleitzahl', get_field('postleitzahl', 'options'), 'polylang', false);
-        pll_register_string('ort', get_field('ort', 'options'), 'polylang', false);
-        pll_register_string('vertretungsberechtigt', get_field('vertretungsberechtigt', 'options'), 'polylang', true);
-        pll_register_string('telefon', get_field('telefon', 'options'), 'polylang', false);
-        pll_register_string('telefax', get_field('telefax', 'options'), 'polylang', false);
-        pll_register_string('email', get_field('e-mail', 'options'), 'polylang', false);
-        pll_register_string('registereintrag_art', get_field('registereintrag-art', 'options'), 'polylang', true);
-        pll_register_string('registergericht', get_field('registergericht', 'options'), 'polylang', true);
-        pll_register_string('registernummer', get_field('registernummer', 'options'), 'polylang', true);
-        pll_register_string('ust_id', get_field('ust-id', 'options'), 'polylang', false);
+        pll_register_string('disclaimer_anzeigen', get_field('disclaimer_anzeigen', 'options'), 'euw', false);
+        pll_register_string('haftung_fuer_inhalte', get_field('haftung-fuer-inhalte', 'options'), 'euw', true);
+        pll_register_string('haftung_fuer_links', get_field('haftung-fuer-links', 'options'), 'euw', true);
+        pll_register_string('urheberrecht', get_field('urheberrecht', 'options'), 'euw', true);
+        pll_register_string('firmenbezeichnung', get_field('firmenbezeichnung', 'options'), 'euw', false);
+        pll_register_string('strasse_hausnummer', get_field('strasse_hausnummer', 'options'), 'euw', false);
+        pll_register_string('postleitzahl', get_field('postleitzahl', 'options'), 'euw', false);
+        pll_register_string('ort', get_field('ort', 'options'), 'euw', false);
+        pll_register_string('vertretungsberechtigt', get_field('vertretungsberechtigt', 'options'), 'euw', true);
+        pll_register_string('telefon', get_field('telefon', 'options'), 'euw', false);
+        pll_register_string('telefax', get_field('telefax', 'options'), 'euw', false);
+        pll_register_string('email', get_field('e-mail', 'options'), 'euw', false);
+        pll_register_string('registereintrag_art', get_field('registereintrag-art', 'options'), 'euw', true);
+        pll_register_string('registergericht', get_field('registergericht', 'options'), 'euw', true);
+        pll_register_string('registernummer', get_field('registernummer', 'options'), 'euw', true);
+        pll_register_string('ust_id', get_field('ust-id', 'options'), 'euw', false);
     }
 
     function register_taxonomies()

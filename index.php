@@ -21,8 +21,6 @@ $args = array(
 
 $context['posts'] = Timber::get_posts($args);
 
-_e('foo', 'euw');
-
 $templates = array('index.twig');
 if (is_home()) {
     array_unshift($templates, 'home.twig');
