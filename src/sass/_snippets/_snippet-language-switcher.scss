@@ -10,7 +10,7 @@
 	&:hover{
 		._snippet-language-switcher-list{
 		position: relative;
-		@include translateY(0);
+		transform: translateY(0);
 		}
 	}
 

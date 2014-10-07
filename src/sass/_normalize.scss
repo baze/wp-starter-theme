@@ -58,9 +58,9 @@ $h6-font-size: 0.67 * $base-font-size !default;
 $indent-amount: defaultlore 2em;
 
 // After the default variables are set, import the required Compass partials.
-@import "compass/support";
-@import "compass/css3/box-sizing";
-@import "compass/typography/vertical_rhythm";
+//@import "compass/support";
+//@import "compass/css3/box-sizing";
+//@import "compass/typography/vertical_rhythm";
 
 
 // To work around a bug in compass-core 1.0.0-alpha.17, we override Compass'
@@ -68,22 +68,22 @@ $indent-amount: defaultlore 2em;
 // @TODO Remove this monkey patch after it's fixed in Compass.
 // @see https://github.com/chriseppstein/compass/pull/1524
 // @see also https://github.com/chriseppstein/compass/pull/1520
-@function support-legacy-browser($browser, $min-version, $max-version: null, $threshold: $critical-usage-threshold) {
-  @if not index($supported-browsers, $browser) {
-    @return false;
-  }
-  // Check against declared minimums.
-  $min-required-version: map-get($browser-minimum-versions, $browser);
-  @if $min-required-version {
-    @return compare-browser-versions($browser, $max-version or $min-version, $min-required-version) >= 0;
-  } @else {
-    // Check against usage stats.
-    $usage: if($max-version,
-               omitted-usage($browser, $min-version, $max-version),
-               omitted-usage($browser, $min-version));
-    @return $usage > $threshold;
-  }
-}
+//@function support-legacy-browser($browser, $min-version, $max-version: null, $threshold: $critical-usage-threshold) {
+//  @if not index($supported-browsers, $browser) {
+//    @return false;
+//  }
+//  // Check against declared minimums.
+//  $min-required-version: map-get($browser-minimum-versions, $browser);
+//  @if $min-required-version {
+//    @return compare-browser-versions($browser, $max-version or $min-version, $min-required-version) >= 0;
+//  } @else {
+//    // Check against usage stats.
+//    $usage: if($max-version,
+//               omitted-usage($browser, $min-version, $max-version),
+//               omitted-usage($browser, $min-version));
+//    @return $usage > $threshold;
+//  }
+//}
 
 /* Base
    ========================================================================== */
@@ -95,7 +95,7 @@ $indent-amount: defaultlore 2em;
    * body `font-size` is set using `em` units.
    */
 
-  @include establish-baseline();
+//  @include establish-baseline();
 }
 
 /**
@@ -152,13 +152,13 @@ audio,
 canvas,
 progress,
 video {
-  @if support-legacy-browser(ie, "9") {
-    display: inline-block; /* 1 */
-    @if support-legacy-browser(ie, "7") {
-      *display: inline;
-      *zoom: 1;
-    }
-  }
+//  @if support-legacy-browser(ie, "9") {
+//    display: inline-block; /* 1 */
+//    @if support-legacy-browser(ie, "7") {
+//      *display: inline;
+//      *zoom: 1;
+//    }
+//  }
   vertical-align: baseline; /* 2 */
 }
 
@@ -172,15 +172,15 @@ audio:not([controls]) {
   height: 0;
 }
 
-@if support-legacy-browser(ie, "10") {
-  /**
-   * Address `[hidden]` styling not present in IE 8/9/10.
-   */
-
-  [hidden] {
-    display: none;
-  }
-}
+//@if support-legacy-browser(ie, "10") {
+//  /**
+//   * Address `[hidden]` styling not present in IE 8/9/10.
+//   */
+//
+//  [hidden] {
+//    display: none;
+//  }
+//}
 
 /**
  * Hide the `template` element in IE, Safari, and Firefox < 22.
@@ -232,15 +232,15 @@ strong {
   font-weight: bold;
 }
 
-@if not $strict-normalize or support-legacy-browser(ie, "7") {
-  /**
-   * Set 1 unit of vertical rhythm on the top and bottom margin.
-   */
-
-  blockquote {
-    margin: rhythm(1) $indent-amount;
-  }
-}
+//@if not $strict-normalize or support-legacy-browser(ie, "7") {
+//  /**
+//   * Set 1 unit of vertical rhythm on the top and bottom margin.
+//   */
+//
+//  blockquote {
+//    margin: rhythm(1) $indent-amount;
+//  }
+//}
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.

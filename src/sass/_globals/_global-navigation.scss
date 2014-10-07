@@ -11,15 +11,17 @@ nav{
 
 ._global-header-navigation{
 
-	@extend %dropdown !optional;
+  @extend %dropdown !optional;
 
-	width: 100%;
-	font-size: 75%;
-	@include breakpoint($breakpoint-medium) {
-		height: 60px;
-	}
+  font-size: 75%;
 
-	.has-submenu > a{ line-height: 60px; }
+  @include breakpoint($breakpoint-medium) {
+	  height: 60px;
+	@include span(9 of 12);
+	float: right;
+  }
+
+  .has-submenu > a{ line-height: 60px; }
 }
 
 ._global-footer-navigation{}

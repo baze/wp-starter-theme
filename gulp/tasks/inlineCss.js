@@ -7,7 +7,7 @@ var notify = require('gulp-notify');
 var rename = require('gulp-rename');
 var handleErrors = require('../util/handleErrors');
 
-gulp.task('inlineCss', ['compass'], function() {
+gulp.task('inlineCss', ['sass'], function() {
 
     var styles = fs.readFileSync('dest/css/critical.css', 'utf8');
 
