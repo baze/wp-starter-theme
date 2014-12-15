@@ -1,6 +1,5 @@
 p{
 	margin-top: 0;
-	margin-bottom: ms(1);
 	abbr{font-style: italic; font-weight: bold;}
 	b, strong{font-weight: bold;}
 	cite{font-style: italic;}
@@ -26,7 +25,6 @@ p{
 	var{font-family: $monospace-font;}
 
 	ul, ol{
-		margin-left: ms(1);
 		list-style: disc;
 	}
 	ul{ list-style: circle outside none; }
@@ -36,7 +34,6 @@ p{
 
 .hyphenate, .hyphenate *{ text-align: justify !important; }
 
-hr{margin: ms(1) 0;}
 
 pre{}
 
@@ -48,24 +45,20 @@ address{}
 
 blockquote{
 	font-style: italic;
-	font-size: ms(1);
 	color: #999;
-	line-height: ms(1);
-	margin-left: ms(1);
 	padding-left: 0.75em;
 	border-left: 4px solid #ddd; 
 }
 
 dl{
 	display: block;
-	line-height: $base-line-height * 2;
+//	line-height: $base-line-height * 2;
 	dt,dd{width: 50%; float: left; border-bottom:1px solid #ddd; margin: 0; padding: 0;}
 	dt{font-weight: bold; font-family: $secondary-font;}
 }
 
 details{
 	background: #ddd;
-	padding: ms(0.5);
 	
 	summary{font-weight: bold;}
 	div{
@@ -73,7 +66,6 @@ details{
 	}
 	ul{ 
 		list-style-type: upper-roman;
-		margin-left: ms(1);
 		li{}
 	}	
 }
@@ -86,7 +78,6 @@ details[open]{
 figure{
 	border: 1px solid  #777;
 	background: #fff;
-	margin-bottom: ms(1);
 	img{width: 100%;}
 	figcaption{
 		color: #777;
@@ -101,7 +92,6 @@ figure{
 table{
 	width: 100%;
 	font-family: $secondary-font;
-	line-height: ms(1);
 	border: 1px solid #777;
 	text-align: left;
 	caption{}

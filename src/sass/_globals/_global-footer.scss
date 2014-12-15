@@ -1,2 +1,7 @@
-._global-footer{
+._global-footer {
+
+}
+
+._global-footer-container {
+  @include container;
 }

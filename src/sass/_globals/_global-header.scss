@@ -1,8 +1,20 @@
 ._global-header{
 	@extend %z-layer-ui;
+
+}
+
+._global-header-container {
+  @include container;
+  @extend %clear;
 }
 
 ._global-header-logo{
+
+  @include breakpoint($breakpoint-medium) {
+    @include span(3 of 12);
+    float: left;
+  }
+
   img {
     display: block;
     @extend %center;

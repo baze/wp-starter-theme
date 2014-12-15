@@ -79,17 +79,17 @@ $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 }
 
 %box-shadow{
-  @include box-shadow(0 2px 0.25em 0 rgba(0,0,0,0.15));
+  box-shadow: 0 2px 0.25em 0 rgba(0,0,0,0.15);
 }
 
 %box-shadow-hover{
-  &:hover{ @include box-shadow(0 4px 0.45em 0 rgba(0,0,0,0.15)); }
+  &:hover{ box-shadow: 0 4px 0.45em 0 rgba(0,0,0,0.15); }
 }
 
 %transition{
-  @include transition(all 185ms ease-in-out);
+  transition: all 185ms ease-in-out;
 }
 
 %border-radius{
-  @include border-radius(0.15em);
+  border-radius: 0.15em;
 }

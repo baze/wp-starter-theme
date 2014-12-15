@@ -4,12 +4,13 @@
 @import "_colors";
 
 //normalize
-@import "_normalize";
+@import "../../bower_components/normalize-scss/normalize";
 
 //custom Breakpoint mixins
 @import "_breakpoints";
 
 //Typographic styles
+@import "_typography/icomoon";
 @import "_typography";
 
 //UI-Elements
