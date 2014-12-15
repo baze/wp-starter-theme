@@ -1,4 +1,35 @@
-<article class="_content-agentur-team-member" itemscope itemtype="http://schema.org/Person">
-    <h4 class="_content-agentur-team-member-name" itemprop="name"><a href="{{ person.get_path }}">{{ person.title
-            }}</a></h4>
+<article class="_snippet-person person person--med" itemscope itemtype="http://schema.org/Person">
+    <div class="person-image">
+        {% if person.get_field('profil-link') == 'yes' %}
+            <a href="{{ person.link }}">
+                <img src="{{ TimberImage(person.get_thumbnail | default(placeholder(320,320))) }}"/>
+            </a>
+        {% else %}
+            <img src="{{ TimberImage(person.get_thumbnail | default(placeholder(320,320))) }}"/>
+        {% endif %}
+    </div>
+
+    {% if person.get_field('profil-link') == 'yes' %}
+        <a href="{{ person.link }}">
+            <h4 class="person-name" itemprop="name">{{ person.title }}</h4>
+        </a>
+    {% else %}
+        <h4 class="person-name" itemprop="name">{{ person.title }}</h4>
+    {% endif %}
+
+    <p class="person-jobtitle">
+        {{ person.jobtitle }}
+    </p>
+
+    {% if person.excerpt %}
+        <p class="person-description">
+            {{ person.excerpt }}
+        </p>
+    {% endif %}
+
+    {% if person.get_field('profil-link') == 'yes' %}
+        <div class="profile-link">
+            {% include('_snippets/_snippet-button.twig') with {'type': 'secondary', 'label': _e('Profile'), 'url': member.link } %}
+        </div>
+    {% endif %}
 </article>

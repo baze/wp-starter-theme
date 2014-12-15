@@ -1,0 +1,14 @@
+<strong>{{ _e('Location') }}: </strong>
+{{ event.get_field('event-location') }}<br/>
+
+<strong>{{ _e('Timeframe') }}: </strong>
+{{ event.get_field('event-start') | date('Y/m/d') }}
+– {{ event.get_field('event-end') | date('Y/m/d') }}<br/>
+
+<strong>{{ _e('Duration') }}: </strong>
+{% if event.get_field('event-duration') %}
+    {{ event.get_field('event-duration') }}
+{% else %}
+    {{ duration(event) }}
+    {{ duration(event) != 1 ? _e('Days') : _e('Day') }}
+{% endif %}

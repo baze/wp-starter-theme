@@ -1,0 +1,10 @@
+<article class="_snippet-service service service--small" itemscope itemtype="http://schema.org/ProfessionalService">
+    <h4>
+        <a href="{{ service.link }}">{{ service.post_title }}</a>
+    </h4>
+
+    <p>{{ service.post_excerpt }}</p>
+
+    {% include('_snippets/_snippet-button.twig') with {'type': 'primary', 'label': _e('Learn more'), 'url':
+    TimberPost(service.link) } %}
+</article>

@@ -1,7 +1,0 @@
-<article class="_content-agentur-team-member" itemscope itemtype="http://schema.org/Person">
-    {% if post.get_thumbnail %}
-        <img src="{{ person.get_thumbnail.get_url }}"/>
-    {% endif %}
-    <h4 class="_content-agentur-team-member-name" itemprop="name">{{ person.title }}</h4>
-    <div class="_content-agentur-team-member-position" itemprop="jobtitle">{{ person.get_field('jobtitle') }}</div>
-</article>

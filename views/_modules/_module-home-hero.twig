@@ -1,0 +1,17 @@
+<div class="container _module-home-hero" style="background-image: url('{{ TimberImage(post.get_thumbnail) }}')">
+    <div class="container-inner">
+        <section>
+            {% if post.get_field('page-header-headline') %}
+            <h1 class="_module-home-hero-headline">{{ post.get_field('page-header-headline') }}</h1>
+            {% endif %}
+
+            {% if post.get_field('page-header-subline') %}
+            <h2 class="_module-home-hero-subline">{{ post.get_field('page-header-subline') }}</h2>
+            {% endif %}
+
+            {% include '_modules/_module-related-pages.twig' with {'pages': post.get_field('hero-related_pages-repeater')} %}
+
+            {% include '_modules/_module-sticky-nav.twig' %}
+        </section>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<ul>
+    {% for child in item.get_children %}
+        <li class="{{ child.classes | join(' ') }}">
+            <a href="{{ child.get_link }}"
+                    {% if child.get_children %}
+                        class="dropdown-toggle"
+                    {% endif %}
+                    >{{ child.title }}</a>
+            {% if child.get_children %}
+                {% include('_menus/_submenu.twig') with {'item': child} %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,15 @@
+{% extends "container.twig" %}
+
+{% block content %}
+
+    <section class="_module-content entry-content">
+
+        {% if displayTitle %}
+        <h1>{{ post.title }}</h1>
+        {% endif %}
+
+        {{ post.content }}
+
+    </section>
+
+{% endblock %}

@@ -1,7 +1,4 @@
 <header class="_module-entry-header">
     {% include('_snippets/_snippet-breadcrumbs.twig') %}
-    {% if post.get_thumbnail %}
-        <img src="{{ post.get_thumbnail.get_url }}"/>
-    {% endif %}
     <h1>{{ post.post_title }}</h1>
 </header>

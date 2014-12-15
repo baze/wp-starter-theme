@@ -1,0 +1,24 @@
+<article class="_snippet-person person person--full" itemscope itemtype="http://schema.org/Person">
+    <div class="person-image">
+        <img src="{{ TimberImage(person.get_thumbnail | default(placeholder(320,320))) }}"/>
+    </div>
+
+    <h1 class="person-name" itemprop="name">{{ person.title }}</h1>
+
+    <p class="person-jobtitle">
+        {{ person.jobtitle }}
+    </p>
+
+    {% if person.excerpt %}
+        <p class="person-description">
+            <strong>{{ person.excerpt }}</strong>
+        </p>
+    {% endif %}
+
+    {% if person.content %}
+        <div class="person-content">
+            {{ person.content }}
+        </div>
+    {% endif %}
+
+</article>

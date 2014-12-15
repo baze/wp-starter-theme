@@ -1,0 +1,17 @@
+{% extends "container.twig" %}
+
+{% block content %}
+
+    <section class="_module-home-services">
+        <h2>{{ post.get_field('services-headline') }}</h2>
+
+        <p>{{ post.get_field('services-description') }}</p>
+
+        <div class="_module-home-services--services">
+            {% for service in post.get_field('services-services') %}
+                {% include '_snippets/_snippet-service--med.twig' with {'service': TimberPost(service)} %}
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

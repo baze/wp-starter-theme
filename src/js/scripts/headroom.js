@@ -7,7 +7,7 @@ module.exports = function() {
     var myElement = document.querySelector('._global-header');
     var headroom = new Headroom(myElement, {
         "tolerance": 0,
-        "offset": 720,
+        "offset": 510,
         "classes": {
             "initial": "headroom",
             "pinned": "headroom--pinned",

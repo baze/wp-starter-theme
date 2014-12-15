@@ -1,6 +1,4 @@
 <script>
-	var path = '{{ template_directory_uri }}';
-
 	function loadCSS( href, before, media ){
 		"use strict";
 		var ss = window.document.createElement( "link" );
@@ -14,7 +12,7 @@
 		} );
 		return ss;
 	 }
-	loadCSS( path + "/dest/css/non-critical.css" );
+	loadCSS("{{ theme.uri }}/dest/css/non-critical.css" );
 
 	function loadJS( src ){
 		"use strict";
@@ -24,8 +22,8 @@
 		ref.parentNode.insertBefore( script, ref );
 		return script;
 	}
-	loadJS( path + "/dest/js/bundle.js" );
+	loadJS("{{ theme.uri }}/dest/js/bundle.js" );
 </script>
 <noscript>
-	<link rel="stylesheet" href="{{ template_directory_uri }}/dest/css/non-critical.css">
+	<link rel="stylesheet" href="{{ theme.uri }}/dest/css/non-critical.css">
 </noscript>
